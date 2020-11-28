@@ -59,11 +59,38 @@ const managerQuestions = () => {
             name: "office",
         },
     ]).then(function (completed) {
-        let manager = new Manager(completed.name, completed.is, completed.email, completed.office)
+        let manager = new Manager(completed.name, completed.id, completed.email, completed.office)
         employees.push(manager)
     });
 };
 
+const engineerQuestions = () => {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "Engineer Name:",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "Engineer ID:",
+            name: "id",
+        },
+        {
+            type: "input",
+            message: "Engineer Email:",
+            name: "email",
+        },
+        {
+            type: "input",
+            message: "Engineers GitHub Username",
+            name: "github",
+        },
+    ]).then(function (completed) {
+        let engineer = new Engineer (completed.name, completed.id, completed.email, completed.office)
+        employees.push(engineer)
+    });
+}
 
 employeeQuestions();
 
