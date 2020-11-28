@@ -27,9 +27,9 @@ const employeeQuestions = () => {
     ]).then(val => {
         if (val.employee === "Manager") {
             managerQuestions();
-            // } else if (val.name === "Engineer") {
-            //     engineerQuestions();
-            // } else if (val.name === "Intern") {
+        } else if (val.employee === "Engineer") {
+            engineerQuestions();
+            // } else if (val.employee === "Intern") {
             //     internQuestions();
         }
     })
@@ -87,7 +87,7 @@ const engineerQuestions = () => {
             name: "github",
         },
     ]).then(function (completed) {
-        let engineer = new Engineer (completed.name, completed.id, completed.email, completed.office)
+        let engineer = new Engineer(completed.name, completed.id, completed.email, completed.office)
         employees.push(engineer)
     });
 }
