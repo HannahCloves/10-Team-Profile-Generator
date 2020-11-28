@@ -29,8 +29,8 @@ const employeeQuestions = () => {
             managerQuestions();
         } else if (val.employee === "Engineer") {
             engineerQuestions();
-            // } else if (val.employee === "Intern") {
-            //     internQuestions();
+        } else if (val.employee === "Intern") {
+            internQuestions();
         }
     })
 
@@ -87,16 +87,42 @@ const engineerQuestions = () => {
             name: "github",
         },
     ]).then(function (completed) {
-        let engineer = new Engineer(completed.name, completed.id, completed.email, completed.office)
+        let engineer = new Engineer(completed.name, completed.id, completed.email, completed.github)
         employees.push(engineer)
+    });
+}
+
+const internQuestions = () => {
+    return inquirer.prompt([
+        {
+            type: "input",
+            message: "Intern Name:",
+            name: "name",
+        },
+        {
+            type: "input",
+            message: "Intern ID:",
+            name: "id",
+        },
+        {
+            type: "input",
+            message: "Intern Email:",
+            name: "email",
+        },
+        {
+            type: "input",
+            message: "Intern School:",
+            name: "school",
+        },
+    ]).then(function (completed) {
+        let intern = new Intern(completed.name, completed.id, completed.email, completed.school)
+        employees.push(intern)
     });
 }
 
 employeeQuestions();
 
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
