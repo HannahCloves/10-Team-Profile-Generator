@@ -12,6 +12,7 @@ const render = require("./lib/htmlRenderer");
 
 const employees = [];
 
+//Prompt to start the gathering of information
 const employeeQuestions = () => {
     inquirer.prompt([
         {
@@ -36,6 +37,7 @@ const employeeQuestions = () => {
 
 };
 
+//If manager is chosen from the first prompt, this function will run
 const managerQuestions = () => {
     return inquirer.prompt([
         {
@@ -64,6 +66,7 @@ const managerQuestions = () => {
     });
 };
 
+//If engineer is chosen from the first prompt, this function will run
 const engineerQuestions = () => {
     return inquirer.prompt([
         {
@@ -92,6 +95,7 @@ const engineerQuestions = () => {
     });
 }
 
+//If intern is chosen from the first prompt, this function will run
 const internQuestions = () => {
     return inquirer.prompt([
         {
@@ -120,6 +124,7 @@ const internQuestions = () => {
     });
 }
 
+//runs functions when file is ran
 employeeQuestions();
 
 
