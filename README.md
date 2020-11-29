@@ -6,4 +6,17 @@ A CLI application that the user interacts with to input information about their 
 ### Images
 
 Initial Prompt
+
 ![FirstPrompt](/Assets/FirstPrompt.PNG)
+
+Manager Prompts
+
+![ManagerPrompts](/Assets/ManagerPrompts.PNG)
+
+Engineer Prompts
+
+![EngineerPrompts](/Assets/EngineerPrompts.PNG)
+
+Intern Prompts
+
+![InternPrompts](/Assets/InternPrompts.PNG)
