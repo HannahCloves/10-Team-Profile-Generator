@@ -23,7 +23,8 @@ const employeeQuestions = () => {
                 "Manager",
                 "Engineer",
                 "Intern",
-            ]
+                "Create File"
+            ],
         },
     ]).then(val => {
         if (val.employee === "Manager") {
@@ -32,9 +33,10 @@ const employeeQuestions = () => {
             engineerQuestions();
         } else if (val.employee === "Intern") {
             internQuestions();
-        }
-    })
-
+        } else if (val.employee === "Create File") {
+            createHTML(outputPath, render(employees));
+        };
+    });
 };
 
 //If manager is chosen from the first prompt, this function will run
@@ -61,8 +63,10 @@ const managerQuestions = () => {
             name: "office",
         },
     ]).then(function (completed) {
-        let manager = new Manager(completed.name, completed.id, completed.email, completed.office)
-        employees.push(manager)
+        let manager = new Manager(completed.name, completed.id, completed.email, completed.office);
+        employees.push(manager);
+        employeeQuestions();
+
     });
 };
 
@@ -90,8 +94,9 @@ const engineerQuestions = () => {
             name: "github",
         },
     ]).then(function (completed) {
-        let engineer = new Engineer(completed.name, completed.id, completed.email, completed.github)
-        employees.push(engineer)
+        let engineer = new Engineer(completed.name, completed.id, completed.email, completed.github);
+        employees.push(engineer);
+        employeeQuestions();
     });
 }
 
@@ -119,8 +124,9 @@ const internQuestions = () => {
             name: "school",
         },
     ]).then(function (completed) {
-        let intern = new Intern(completed.name, completed.id, completed.email, completed.school)
-        employees.push(intern)
+        let intern = new Intern(completed.name, completed.id, completed.email, completed.school);
+        employees.push(intern);
+        employeeQuestions();
     });
 }
 
@@ -128,11 +134,11 @@ const internQuestions = () => {
 // Writes to a newly generated HTML File
 function createHTML(fileName, data) {
     fs.writeFile(fileName, data, "utf8", function (err) {
-      if (err) {
-        throw err;
-      }
+        if (err) {
+            throw err;
+        }
     });
-  };
+};
 
 //runs functions when file is ran
 employeeQuestions();
