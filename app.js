@@ -130,7 +130,6 @@ const internQuestions = () => {
     });
 }
 
-
 // Writes to a newly generated HTML File
 function createHTML(fileName, data) {
     fs.writeFile(fileName, data, "utf8", function (err) {
