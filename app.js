@@ -12,6 +12,13 @@ const render = require("./lib/htmlRenderer");
 
 const employees = [];
 
+//function that creates output folder if it doesnt exist
+const output = () => {
+    if (!fs.existsSync(OUTPUT_DIR)){
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+}
+
 //Prompt to start the gathering of information
 const employeeQuestions = () => {
     inquirer.prompt([
@@ -141,4 +148,4 @@ function createHTML(fileName, data) {
 
 //runs functions when file is ran
 employeeQuestions();
-
+output();
