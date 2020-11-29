@@ -5,6 +5,10 @@ A CLI application that the user interacts with to input information about their 
 
 ### Images
 
+Working GIF
+
+![Working](/Assets/Working.gif)
+
 Initial Prompt
 
 ![FirstPrompt](/Assets/FirstPrompt.PNG)
